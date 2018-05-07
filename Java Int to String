@@ -1,0 +1,29 @@
+   
+String str="";
+int number=n;
+boolean flag=true;
+String s=null;
+if(n==0)
+{   
+    s=new String("0");
+}else
+{
+    if(n<0)    
+    {        
+        flag=false;        
+        number= Math.abs(number);    
+    }
+     while(number>0)     
+     {            
+         int remainder =number % 10;            
+         str=str+Integer.toString(remainder);           
+         number=number/10;     
+      }    
+      StringBuffer str1 =new StringBuffer(str);   
+      str1 =str1.reverse();    
+      s=new String(str1);    
+      if(!flag)   
+      {        
+         s="-"+s;    
+      }
+}
