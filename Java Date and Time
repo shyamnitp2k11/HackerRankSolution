@@ -1,0 +1,21 @@
+import java.util.Date;
+import java.text.SimpleDateFormat;
+import java.text.DateFormat;
+public class Solution 
+{    
+   public static String getDay(String day, String month, String year)    
+   {        
+       String str=null;      
+       try        
+       {            
+            str=month+"-"+day+"-"+year;       
+            DateFormat  formatter = new SimpleDateFormat("MM-dd-yy");            
+            Date date = formatter.parse(str);
+            DateFormat simpleDateformat = new SimpleDateFormat("EEEE");            
+            str=simpleDateformat.format(date).toUpperCase();                             
+        }        
+        catch(Exception ex)        
+        {                    
+        }      
+        return str;    
+}
