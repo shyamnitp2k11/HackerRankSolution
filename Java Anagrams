@@ -1,0 +1,46 @@
+    static boolean isAnagram(String a, String b) 
+    {
+        boolean flag =true;
+        Map<Character,Integer> m=new HashMap<Character,Integer>();
+        a=a.toUpperCase();
+        b=b.toUpperCase();
+        
+        for(int i=0;i<a.length();i++)
+        {
+            Character ch=a.charAt(i);
+            if(m.containsKey(ch))
+            {
+                int value= m.get(ch);
+                m.put(ch,++value);
+            }else
+            {
+                m.put(ch,1);
+            }
+        }
+        
+        for(int i=0;i<b.length();i++)
+        {
+            Character ch=b.charAt(i);
+            if(m.containsKey(ch))
+            {
+                int value= m.get(ch);
+                m.put(ch,--value);
+            }else{
+                flag =false;
+                break;
+            }
+        }
+        
+        if(flag)
+        {
+            for (Map.Entry<Character, Integer> entry : m.entrySet())
+            {
+                 if(entry.getValue()!=0)
+                 {
+                    flag =false;
+                    break;
+                 }
+            }
+        }
+        return flag;
+    }
