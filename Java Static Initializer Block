@@ -1,0 +1,22 @@
+ static int B=0;
+ static int H=0; 
+ static boolean flag=false;
+static
+{    
+    Scanner scan=new Scanner(System.in);     
+    B =scan.nextInt();     
+    H =scan.nextInt();  
+    try
+    {    
+      if(B<=0 || H <=0)   
+      {        
+         throw new Exception();    
+      }else
+      {        
+         flag=true;    
+      }   
+    }catch(Exception ex)
+    {       
+       System.out.print("java.lang.Exception: Breadth and height must be positive");   
+    }
+}
