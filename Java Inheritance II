@@ -1,0 +1,20 @@
+class Arithmetic
+{ 
+    int add(int a,int b)
+    {
+        int z=a+b;
+        return z;
+    }
+    
+}
+
+class Adder extends Arithmetic
+{
+    
+    int add(int a,int b)
+    {
+        int z=super.add(a,b);
+        return z;
+    }
+    
+}
