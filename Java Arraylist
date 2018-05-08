@@ -1,0 +1,39 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    public static void main(String[] args) 
+    {
+        Scanner scan=new Scanner(System.in);
+        int row=scan.nextInt();
+        List<List<Integer>> listOfLists = new ArrayList<List<Integer>>(row); 
+        for(int i=0;i<row;i++)
+        {
+            int column =scan.nextInt();
+            List array=new ArrayList(column);
+            for(int j=0;j<column;j++)
+            {
+                array.add(scan.nextInt());
+              
+            }
+            listOfLists.add(array);
+        }
+        
+        int q=scan.nextInt();
+        for(int i=0;i<q;i++)
+        {
+            int qrow=scan.nextInt()-1;
+            int qcol=scan.nextInt()-1;
+            try{
+                System.out.println(""+listOfLists.get(qrow).get(qcol));
+            }catch(Exception ex){
+                System.out.println("ERROR!");
+            }
+        }
+        
+    }
+}
