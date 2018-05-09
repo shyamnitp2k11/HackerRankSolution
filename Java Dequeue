@@ -1,0 +1,38 @@
+    import java.util.*;
+    public class test {
+        public static void main(String[] args) {
+            Scanner in = new Scanner(System.in);
+            Deque<Integer> deque = new ArrayDeque<Integer>();
+            int n = in.nextInt();
+            int m = in.nextInt();
+
+            for (int i = 0; i < n; i++) 
+            {
+                int num = in.nextInt();
+                deque.addLast(num);
+            }
+            int max=Integer.MIN_VALUE;
+            int size=deque.size();
+            Set<Integer> s=new HashSet<Integer>();
+            for(int i=0;i<size-m+1 ;i++)
+            { 
+            
+                Deque<Integer> dequecopy = new ArrayDeque<Integer>(deque);
+                s=new HashSet<Integer>();
+                for(int j=0;j<m;j++)
+                {
+                    int a=dequecopy.getFirst();
+                    s.add(a);
+                    dequecopy.removeFirst();
+                   
+                }
+                if(s.size()> max)
+                {
+                    max=s.size();
+                }
+                int ax=deque.peekFirst();
+                deque.removeFirst();
+            }
+            System.out.println(""+max);
+        }
+    }
